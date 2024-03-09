@@ -26,6 +26,7 @@ public class SignupServlet extends HttpServlet {
         String password = req.getParameter("password");
 
         try{
+            // add mysql connector dependency to POM.XML
             Class.forName("com.mysql.cj.jdbc.Driver");
 
             try(Connection connection = DriverManager.getConnection(JDBC_URL, JDBC_USER, JDBC_PASSWORD)){
@@ -38,6 +39,7 @@ public class SignupServlet extends HttpServlet {
                 int rowAffected = statement.executeUpdate();
 
                 if(rowAffected > 0){
+//                    resp.sendRedirect("signup-success.jsp");
                     resp.sendRedirect("signup-success.jsp");
                 }else {
                     resp.sendRedirect("signup-error.jsp");
