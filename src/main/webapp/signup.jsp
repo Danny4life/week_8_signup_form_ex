@@ -13,7 +13,7 @@
 <body>
 <div align="center">
     <h1>Signup Form</h1>
-    <form action="/signup-servlet" method="post">
+    <form action="/signup" method="post">
         First Name : <input type="text" name="firstName" /><br /><br />
         Last Name : <input type="text" name="lastName" /><br /><br />
         Email : <input type="email" name="email" /><br /><br />
