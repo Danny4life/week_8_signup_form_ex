@@ -14,7 +14,7 @@ import java.sql.SQLException;
 
 @WebServlet(name = "signupServlet", value = "/signup-servlet")
 public class SignupServlet extends HttpServlet {
-    private static final String JDBC_URL = "jdbc:mysql://localhost:3306/userdb";
+    private static final String JDBC_URL = "jdbc:mysql://localhost:3306/userDB";
     private static final String JDBC_USER = "root";
     private static final String JDBC_PASSWORD = "PASSword1234!#";
 
@@ -30,7 +30,7 @@ public class SignupServlet extends HttpServlet {
             Class.forName("com.mysql.cj.jdbc.Driver");
 
             try(Connection connection = DriverManager.getConnection(JDBC_URL, JDBC_USER, JDBC_PASSWORD)){
-                PreparedStatement statement = connection.prepareStatement("INSERT INTO users (firstName, lastName, email, password) VALUES (?, ?, ?, ?)");
+                PreparedStatement statement = connection.prepareStatement("INSERT INTO user (firstName, lastName, email, password) VALUES (?, ?, ?, ?)");
                 statement.setString(1, firstName);
                 statement.setString(2, lastName);
                 statement.setString(3, email);
