@@ -21,7 +21,5 @@
         <input type="submit" value="Signup">
     </form>
 </div>
-
-
 </body>
 </html>
